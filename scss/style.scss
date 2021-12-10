@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap");
+
+@import "./@mixins.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$mainColor: #f05670;
+$secondaryColor: #1e959b;
+
+.header_main {
+  width: 100%;
+  padding: 30px 100px;
+
+  &_content {
+    @include flex(row, center, space-between);
+
+    &_contact {
+      @include flex(row, center, space-between);
+      > img {
+        margin-left: 30px;
+      }
+
+      button {
+        margin-left: 30px;
+      }
+    }
+  }
+
+  &_body {
+    @include flex(row, center, space-between);
+    margin-top: 45px;
+
+    &_info {
+      width: 561px;
+      text-align: left;
+      padding: 0px;
+    }
+  }
+}
+
+.pink-button {
+  padding: 5px 15px;
+  height: 55px;
+  background: $mainColor;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline-style: solid;
+  outline-color: $mainColor;
+  cursor: pointer;
+  outline-width: thin;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.slider_main {
+  width: 100%;
+  background: $secondaryColor;
+  height: 95px;
+  position: relative;
+  margin: auto;
+  @include flex(row, center, center);
+
+  &_content {
+    @include flex(row, center, space-between);
+    position: absolute;
+    margin: auto;
+    width: 80%;
+    &_images {
+      width: 350px;
+      margin: auto;
+      transition: all 0.5s linear;
+    }
+  }
+}
+
+.slider_second {
+  padding: 30px 100px;
+  margin-top: 35px;
+  width: 100%;
+  position: relative;
+  &_main {
+    margin: auto;
+    @include flex(row, center, space-between);
+    &_images {
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 25px;
+      padding: 15px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+      box-shadow: 0px 4px 4px rgba(30, 149, 155, 0.5);
+      border-radius: 25px;
+      transition: all 0.5s linear;
+
+      &:first-child {
+        background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+        box-shadow: inset 0px 4px 4px rgba(30, 149, 155, 0.5);
+      }
+
+      &_text {
+        margin-top: 5px;
+        p {
+          font-family: "Duru Sans", sans-serif;
+          color: #3c3c3c;
+          text-transform: uppercase;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+.slider_main_left,
+.slider_main_right {
+  display: none;
+  position: absolute;
+  font-size: 75px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 10px;
+}
+.slider_main_left {
+  left: 5px;
+}
+.slider_main_right {
+  right: 5px;
+}
+.second_slide_left,
+.second_slide_right {
+  color: $secondaryColor;
+  top: 70px;
+}
+
+.third_slide_left,
+.third_slide_right {
+  color: $secondaryColor;
+  top: 90px;
+}
+
+h1 {
+  color: $secondaryColor;
+  text-transform: uppercase;
+  font-family: "Duru Sans", sans-serif;
+}
+p {
+  font-family: "Duru Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  text-align: left;
+  line-height: 25px;
+  color: #3c3c3c;
+  margin: 25px 0;
+}
+.second {
+  flex-direction: row-reverse !important;
+  position: relative;
+  overflow: hidden;
+  &_elipse {
+    position: absolute;
+  }
+}
+.el0 {
+  top: 0;
+  left: 7px;
+}
+
+.el1 {
+  bottom: 0;
+  left: 50%;
+}
+
+.el2 {
+  left: 0;
+  bottom: 120px;
+}
+
+.el3 {
+  top: 0;
+  right: 0;
+}
+
+.section_content {
+  position: relative;
+  @include flex(row, center, space-between);
+  padding: 30px 100px;
+
+  &_text {
+    width: 560px;
+  }
+}
+.for_background {
+  position: relative;
+  width: calc(100% / 4.5);
+  transition: all 0.5s linear;
+}
+
+.third_slider {
+  padding: 30px 100px;
+  position: relative;
+
+  &_main {
+    @include flex(row, center, space-between, wrap);
+    margin: auto;
+    position: relative;
+    z-index: 7;
+
+    &_images {
+      @include flex(column, center, space-between, wrap);
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+      box-shadow: 0px 5px 10px rgba(30, 149, 155, 0.5);
+      border-radius: 30px;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 40px 5px;
+      height: 500px;
+      z-index: 7;
+      position: relative;
+
+      p {
+        text-align: center;
+        text-transform: uppercase;
+        color: $secondaryColor;
+        font-weight: bold;
+      }
+      &_images {
+        background: $secondaryColor;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        height: 200px;
+        width: 200px;
+      }
+      &_background {
+        top: 285px;
+        position: absolute;
+        z-index: -1;
+        width: 120%;
+        background: $secondaryColor;
+        height: 140px;
+      }
+    }
+  }
+}
+
+.third {
+  @include flex(row, center, space-around);
+  button {
+    width: 400px;
+    height: 100px;
+    font-size: 35px;
+  }
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+footer {
+  @include flex(row, center, space-between);
+  padding: 30px 100px;
+  p {
+    color: $secondaryColor;
+  }
+
+  .footer_content {
+    width: 650px;
+    display: flex;
+    @include flex(row, center, space-between);  
+
+    p {
+      color: #3c3c3c;
+    }
+  }
+}
+
+//media
+@media only screen and (max-width: 600px) {
+  p {
+    text-align: center;
+  }
+  .header_main {
+    @include flex(column, center, center);
+    padding: 0;
+
+    width: 100%;
+    &_content {
+      @include flex(column, center, center);
+      margin: auto;
+      text-align: center;
+      > div {
+        padding: 0 !important;
+      }
+      &_contact {
+        display: none;
+      }
+    }
+    &_body {
+      @include flex(column, center, center);
+      margin-top: 25px;
+      text-align: center;
+      width: 100vw;
+      position: relative;
+      &_info {
+        padding: 15px;
+        margin: 25px auto;
+        width: 100vw;
+        text-align: center;
+
+        button {
+          position: absolute;
+          bottom: 90px;
+          left: calc(100% / 3.5);
+        }
+      }
+      &_img {
+        > img {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .slider_main {
+    width: 100%;
+
+    &_content {
+      margin: auto;
+      overflow: hidden;
+      width: 100vw;
+
+      &_images {
+        min-width: 100vw;
+        margin: auto;
+        @include flex(row, center, center);
+      }
+    }
+  }
+
+  .slider_main_left,
+  .slider_main_right {
+    display: inline;
+  }
+  .slider_second {
+    width: 100%;
+    &_main {
+      margin: auto;
+      width: 100%;
+      overflow: hidden;
+      &_images {
+        min-width: 100%;
+        margin: auto;
+      }
+    }
+  }
+
+  .section_content {
+    width: 100%;
+    @include flex(column-reverse, center, center);
+    margin: auto;
+    position: relative;
+
+    text-align: center;
+    margin-top: 5px;
+    &_image {
+      > img {
+        width: 100%;
+      }
+    }
+    &_text {
+      width: 100%;
+      p {
+        font-size: 15px;
+      }
+    }
+    button {
+      position: absolute;
+      bottom: 0px;
+      left: calc(100% / 3.5);
+      
+    }
+  }
+  .second {
+    display: none!important;
+  }
+
+  .third_slider {
+    overflow: hidden;
+    
+    &_main {
+      @include flex(row, center, space-between, nowrap);
+      margin: auto;
+      width: 100%;
+      overflow: hidden;
+
+      &_images {
+        width: 100%;
+        margin: auto;
+        @include flex(column, center, center);
+        &_background {
+          top: 88px;
+          min-width: 100%;
+          padding: none;
+          position: absolute;
+          z-index: 3;
+        }
+      }
+    }
+  }
+  .for_background {
+    min-width: 100%;
+  }
+
+
+
+  .section_content{
+    margin: auto;
+    text-align: center;
+    @include flex(column, center, center);
+    width: 100%;
+    
+    img{
+      margin: auto;
+      text-align: center;
+    }
+
+    .third_btn{
+      left: 57px !important;
+      width: 80%;
+      text-align: center;  
+      bottom: -80px;    
+    }
+   
+  } 
+
+  footer{
+    @include flex(column, center, center);
+   >div:first-child{
+      display: none;
+    }
+    margin-top: 55px;
+          .footer_content{
+            width: 100%;
+            @include flex(row, center, space-between);  
+
+            p{
+              font-size: 12px;        
+                    text-align: left;
+                    width: 350px;
+              }
+              img{
+                height: 100%;
+              }
+
+          }
+  }
+}
+
+.disabled {
+  color: gray;
+}
