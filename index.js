@@ -36,7 +36,7 @@ function slideLeftHendler(cuurentElement) {
   let parrentNode = null;
   window.addEventListener("resize", checkInnerWidth);
   function checkInnerWidth() {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 680) {
       currentSlydeWidth = allImages[0].getBoundingClientRect().width;
       parrentNode =
         allImages[0].offsetParent.offsetParent.getBoundingClientRect().width;
@@ -152,7 +152,7 @@ function secondSlideHendler(currentElement) {
 
   window.addEventListener("resize", checkInnerWidth);
   function checkInnerWidth() {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 680) {
       getElementWidth = secondSlyderSlides[0].getBoundingClientRect().width;
     } else {
       secondSlyderSlides.forEach((el) => {
@@ -307,7 +307,7 @@ function thirdSliderHendler(currentElement) {
 
   window.addEventListener("resize", checkInnerWidth);
   function checkInnerWidth() {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 680) {
       getElementWidth = allThirdSlides[0].getBoundingClientRect().width;
     } else {
       allThirdSlides.forEach((el) => {
