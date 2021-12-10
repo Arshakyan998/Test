@@ -194,9 +194,8 @@ function secondSlideHendler(currentElement) {
           el.style.transform = `translate(-${secondSliderDirection}px)`;
         });
       }
-      if(secondSliderDirection-getElementWidth<0){ 
+      if (secondSliderDirection - getElementWidth < 0) {
         secondSlydeRight.classList.add("disabled");
-
       }
 
       {
@@ -205,63 +204,71 @@ function secondSlideHendler(currentElement) {
   };
 }
 
-const secton=document.querySelector('.second')
+const secton = document.querySelector(".second");
 
-const elipseSrc=[ 
-   './assets/section/Ellipse13elipse3.svg',
-  './assets/section/Ellipse14elipse2.svg',
-  './assets/section/Ellipse5elipse1.svg',
-  './assets/section/Ellipse6elipse4.svg',
+const elipseSrc = [
+  "./assets/section/Ellipse13elipse3.svg",
+  "./assets/section/Ellipse14elipse2.svg",
+  "./assets/section/Ellipse5elipse1.svg",
+  "./assets/section/Ellipse6elipse4.svg",
+];
 
-]
-
-drowElipse(elipseSrc)
-function drowElipse(arr){
-
-  arr.forEach((el,i)=>{
-    secton.insertAdjacentHTML(`afterbegin`,
-    ` 
+drowElipse(elipseSrc);
+function drowElipse(arr) {
+  arr.forEach((el, i) => {
+    secton.insertAdjacentHTML(
+      `afterbegin`,
+      ` 
     <div class="second_elipse el${i}"> <img src=${el} alt='elipse'/> </div>
       
-    `)
-  })
+    `
+    );
+  });
 }
 
-const thirdSlideSrc=[
+const thirdSlideSrc = [
   {
-    src:'./assets/thierdSlide/thirdslider1.svg',
-    text:"ECOMERCE"
-  },{
-    src:'./assets/thierdSlide/thirdslider2.svg',
-    text:"SAAS-ПЛАТФОРМЫ"
-  },{
-    src:'./assets/thierdSlide/thirdslider3.svg',
-    text:"Мобилное приложение"
-  }, {
-    src:'./assets/thierdSlide/thirdslider4.svg',
-    text:'IOT-преложение'
-  },{
-    src:'./assets/thierdSlide/thirdslider5.svg',
-    text:"AR/VR"
-  },{
-    src:'./assets/thierdSlide/thirdslider6.svg',
-    text:"mvp"
-  },{
-    src:'./assets/thierdSlide/thirdslider7.svg',
-    text:"crm/erp"
-  },{
-    src:'./assets/thierdSlide/thirdslider8.svg',
-    text:'blockchain'
-  }
-]
+    src: "./assets/thierdSlide/thirdslider1.svg",
+    text: "ECOMERCE",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider2.svg",
+    text: "SAAS-ПЛАТФОРМЫ",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider3.svg",
+    text: "Мобилное приложение",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider4.svg",
+    text: "IOT-преложение",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider5.svg",
+    text: "AR/VR",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider6.svg",
+    text: "mvp",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider7.svg",
+    text: "crm/erp",
+  },
+  {
+    src: "./assets/thierdSlide/thirdslider8.svg",
+    text: "blockchain",
+  },
+];
 
-const thierdSlide=document.querySelector('.third_slider_main')
-drowThierdSlide(thirdSlideSrc)
+const thierdSlide = document.querySelector(".third_slider_main");
+drowThierdSlide(thirdSlideSrc);
 
-function drowThierdSlide(arr){
-
-   arr.forEach(el=>{
-    thierdSlide.insertAdjacentHTML('afterbegin',`
+function drowThierdSlide(arr) {
+  arr.forEach((el) => {
+    thierdSlide.insertAdjacentHTML(
+      "afterbegin",
+      `
     <div class="for_background">
        <div class="third_slider_main_images">
            <div class="third_slider_main_images_images">
@@ -272,26 +279,31 @@ function drowThierdSlide(arr){
            
        </div> <div class="third_slider_main_images_background">  </div>
        </div>
-     `)
-   })
-
+     `
+    );
+  });
 }
 
-const thirdSlideLeft=document.querySelector('.third_slide_left')
-const thirdSlideRight=document.querySelector('.third_slide_right')
+const thirdSlideLeft = document.querySelector(".third_slide_left");
+const thirdSlideRight = document.querySelector(".third_slide_right");
 
-thirdSlideRight.classList.add('disabled')
+thirdSlideRight.classList.add("disabled");
 
-const allThirdSlides=document.querySelectorAll('.for_background')
+const allThirdSlides = document.querySelectorAll(".for_background");
 
-let thirdSlideDirection=null
+let thirdSlideDirection = null;
 
-thirdSlideLeft.addEventListener('click',thirdSliderHendler("third_slide_left"))
-thirdSlideRight.addEventListener('click',thirdSliderHendler("third_slide_right"))
+thirdSlideLeft.addEventListener(
+  "click",
+  thirdSliderHendler("third_slide_left")
+);
+thirdSlideRight.addEventListener(
+  "click",
+  thirdSliderHendler("third_slide_right")
+);
 
-function thirdSliderHendler (currentElement){
-  
-  let getElementWidth=null
+function thirdSliderHendler(currentElement) {
+  let getElementWidth = null;
 
   window.addEventListener("resize", checkInnerWidth);
   function checkInnerWidth() {
@@ -306,41 +318,38 @@ function thirdSliderHendler (currentElement){
       thirdSlideRight.classList.add("disabled");
     }
   }
- 
-    return ()=>{ 
-      checkInnerWidth()
-          if(currentElement==='third_slide_left'){ 
-            thirdSlideRight.classList.remove("disabled");
-            if(getElementWidth*allThirdSlides.length-getElementWidth>thirdSlideDirection){
-            thirdSlideDirection+=getElementWidth 
-            allThirdSlides.forEach((el) => {
-              el.style.transform = `translate(-${thirdSlideDirection}px)`;
-            });
-            if(getElementWidth*allThirdSlides.length-getElementWidth*2<thirdSlideDirection){
-              thirdSlideLeft.classList.add("disabled");
 
-            }
-          }
-
-          } 
-          if(currentElement==='third_slide_right'){ 
-            thirdSlideLeft.classList.remove("disabled");
-             if(thirdSlideDirection>0){
-              thirdSlideDirection-=getElementWidth 
-              allThirdSlides.forEach((el) => {
-                el.style.transform = `translate(-${thirdSlideDirection}px)`;
-              });
-              if(thirdSlideDirection-getElementWidth<0){
-                thirdSlideRight.classList.add("disabled");
-
-              }
-             } 
-          }
-
-
-
+  return () => {
+    checkInnerWidth();
+    if (currentElement === "third_slide_left") {
+      thirdSlideRight.classList.remove("disabled");
+      if (
+        getElementWidth * allThirdSlides.length - getElementWidth >
+        thirdSlideDirection
+      ) {
+        thirdSlideDirection += getElementWidth;
+        allThirdSlides.forEach((el) => {
+          el.style.transform = `translate(-${thirdSlideDirection}px)`;
+        });
+        if (
+          getElementWidth * allThirdSlides.length - getElementWidth * 2 <
+          thirdSlideDirection
+        ) {
+          thirdSlideLeft.classList.add("disabled");
+        }
+      }
     }
-  }
-
-
-
+    if (currentElement === "third_slide_right") {
+      thirdSlideLeft.classList.remove("disabled");
+      if (thirdSlideDirection > 0) {
+        thirdSlideDirection -= getElementWidth;
+        allThirdSlides.forEach((el) => {
+          el.style.transform = `translate(-${thirdSlideDirection}px)`;
+        });
+        if (thirdSlideDirection - getElementWidth < 0) {
+          thirdSlideRight.classList.add("disabled");
+        }
+      }
+    }
+  };
+}
